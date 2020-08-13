@@ -25,20 +25,15 @@ namespace c_odd_even_sorter_practice_KrisztinaPap
         Console.WriteLine(numbers[9]);
         int i = 0;
         // Sentinel loop with 'done' as the breaking value
-        while ( userInput != "done" && i < 10 )
+        while ( userInput != "done" && i < 10 ) // Huge shout-out to Aaron Champagne for his troubleshooting help!
         {
-            // Populates array
-            // for ( int i = 0; i < numbers.Length; i++ )
-            // {
-                Console.WriteLine("Enter number {0}:", i+1);
-                userInput = Console.ReadLine().ToLower();
-                if (userInput != "done")
-                {
-                    numbers[i] = int.Parse(userInput);
-                    i++;
-                }
-                
-            // }
+            Console.WriteLine("Enter number {0}:", i+1);
+            userInput = Console.ReadLine().ToLower();
+            if (userInput != "done")
+            {
+                numbers[i] = int.Parse(userInput);
+                i++;
+            }
         }         
 
                  
