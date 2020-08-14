@@ -23,7 +23,6 @@ namespace c_odd_even_sorter_practice_KrisztinaPap
 
         // Creates an empty number array, initilizes all values at 0
         int[] numbers = new int[10];
-        int[] newNumbers = new int[10];
         Console.WriteLine(numbers[9]);
         
         // Sentinel loop with 'done' as the breaking value
@@ -39,12 +38,11 @@ namespace c_odd_even_sorter_practice_KrisztinaPap
             }
         }   
 
-        // Initialized empty lists
+        // Initialized two empty lists
         List<int> evenNumbers = new List<int> ();
         List<int> oddNumbers = new List<int> ();
 
-
-        // Sorts numbers by even/odd 
+        // Sorts numbers by even/odd and adds them to the appropriate lists
         foreach (int number in numbers )
         {
             if (number % 2 == 0)
@@ -57,29 +55,30 @@ namespace c_odd_even_sorter_practice_KrisztinaPap
             }
         }
 
+        // Citation:
+        //      https://www.dotnetperls.com/convert-list-array
+        //      The code line below converts the list to an array
         int[] sortedEvenNumbers = evenNumbers.ToArray();
-
-        Array.Sort(sortedEvenNumbers);
-        foreach( int number in sortedEvenNumbers )
-        {
-            if (number != 0)
-            Console.WriteLine(number);
-        }
-
         int[] sortedOddNumbers = oddNumbers.ToArray();
-        
-        // Sort numbers by even/odd and then lowest to highest using methods
-      
-        Array.Sort(sortedOddNumbers);
-        foreach( int number in sortedOddNumbers )
-        {
-            if (number != 0)
-            Console.WriteLine(number);
-        }
+
+        SortNumbers(sortedEvenNumbers);
+        SortNumbers(sortedOddNumbers);
                  
 
 
         
+        }
+        static void SortNumbers(int[] theArray)
+        {
+            // Citation:
+            //      https://docs.microsoft.com/en-us/dotnet/api/system.array.sort?view=netcore-3.1
+            //      The code line below sorts the array itms from smallest to largest
+            Array.Sort(theArray);
+            foreach( int number in theArray )
+            {
+                if (number != 0)
+                Console.WriteLine(number);
+            }
         }
     }
 }

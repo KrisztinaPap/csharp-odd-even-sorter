@@ -15,4 +15,5 @@ August 13, 2020
 https://trello.com/b/dXTXkx7q/c-odd-even-sorter-practice
 
 ## Resources:
-
+[DotNetPearls: Convert-list-array](https://www.dotnetperls.com/convert-list-array)
+[Microsoft Documentation: Array.Sort](https://docs.microsoft.com/en-us/dotnet/api/system.array.sort?view=netcore-3.1)
