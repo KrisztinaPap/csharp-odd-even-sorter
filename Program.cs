@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace c_odd_even_sorter_practice_KrisztinaPap
 {
@@ -22,9 +23,11 @@ namespace c_odd_even_sorter_practice_KrisztinaPap
 
         // Creates an empty number array, initilizes all values at 0
         int[] numbers = new int[10];
+        int[] newNumbers = new int[10];
         Console.WriteLine(numbers[9]);
-        int i = 0;
+        
         // Sentinel loop with 'done' as the breaking value
+        int i = 0;
         while ( userInput != "done" && i < 10 ) // Huge shout-out to Aaron Champagne for his troubleshooting help!
         {
             Console.WriteLine("Enter number {0}:", i+1);
@@ -34,26 +37,49 @@ namespace c_odd_even_sorter_practice_KrisztinaPap
                 numbers[i] = int.Parse(userInput);
                 i++;
             }
-        }         
+        }   
 
+        // Initialized empty lists
+        List<int> evenNumbers = new List<int> ();
+        List<int> oddNumbers = new List<int> ();
+
+
+        // Sorts numbers by even/odd 
+        foreach (int number in numbers )
+        {
+            if (number % 2 == 0)
+            {
+                evenNumbers.Add(number);
+            }
+            else
+            {
+                oddNumbers.Add(number);
+            }
+        }
+
+        int[] sortedEvenNumbers = evenNumbers.ToArray();
+
+        Array.Sort(sortedEvenNumbers);
+        foreach( int number in sortedEvenNumbers )
+        {
+            if (number != 0)
+            Console.WriteLine(number);
+        }
+
+        int[] sortedOddNumbers = oddNumbers.ToArray();
+        
+        // Sort numbers by even/odd and then lowest to highest using methods
+      
+        Array.Sort(sortedOddNumbers);
+        foreach( int number in sortedOddNumbers )
+        {
+            if (number != 0)
+            Console.WriteLine(number);
+        }
                  
 
 
-        /*
-            -- Declare variables
-            
-            
-            -- Sort numbers by even/odd and then lowest to highest using methods
-            -- Return array 
-
-
-            Challenges:
-            -- validate numbers entered using a method (must be integers or the word 'done' or it will throw error and prompt again)
-            -- Solve the problem using LINQ or a lambda expression in Sort()
-            --Possible unique features:
-                -- 
-
-        */
+        
         }
     }
 }
