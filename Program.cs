@@ -63,10 +63,7 @@ namespace c_odd_even_sorter_practice_KrisztinaPap
 
         SortNumbers(sortedEvenNumbers);
         SortNumbers(sortedOddNumbers);
-                 
-
-
-        
+                  
         }
         static void SortNumbers(int[] theArray)
         {
